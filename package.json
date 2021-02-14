@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/basir/amazona/issues"
   },
-  "homepage": "https://github.com/basir/amazona#readme",
+  "homepage": "https://www.inshaallah.uz",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
