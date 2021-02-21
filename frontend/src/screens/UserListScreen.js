@@ -24,17 +24,17 @@ export default function UserListScreen(props) {
     });
   }, [dispatch, successDelete]);
   const deleteHandler = (user) => {
-    if (window.confirm('Are you sure?')) {
+    if (window.confirm('Siz rozimisiz ?')) {
       dispatch(deleteUser(user._id));
     }
   };
   return (
     <div>
-      <h1>Users</h1>
+      <h1>FOYDALANUVCHILAR</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
       {successDelete && (
-        <MessageBox variant="success">User Deleted Successfully</MessageBox>
+        <MessageBox variant="success">Foydalanuvchi muvaffaqiyatli o`chirildi</MessageBox>
       )}
       {loading ? (
         <LoadingBox></LoadingBox>
@@ -45,11 +45,11 @@ export default function UserListScreen(props) {
           <thead>
             <tr>
               <th>ID</th>
-              <th>NAME</th>
+              <th>ISM</th>
               <th>EMAIL</th>
-              <th>IS SELLER</th>
-              <th>IS ADMIN</th>
-              <th>ACTIONS</th>
+              <th>SOTUVCHI ?</th>
+              <th>ADMIN ?</th>
+              <th>HARAKATLAR</th>
             </tr>
           </thead>
           <tbody>
@@ -58,22 +58,22 @@ export default function UserListScreen(props) {
                 <td>{user._id}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td>{user.isSeller ? 'YES' : ' NO'}</td>
-                <td>{user.isAdmin ? 'YES' : 'NO'}</td>
+                <td>{user.isSeller ? 'HA' : 'YO`Q'}</td>
+                <td>{user.isAdmin ? 'HA' : 'YO`Q'}</td>
                 <td>
                   <button
                     type="button"
                     className="small"
                     onClick={() => props.history.push(`/user/${user._id}/edit`)}
                   >
-                    Edit
+                    Tahrirlash
                   </button>
                   <button
                     type="button"
                     className="small"
                     onClick={() => deleteHandler(user)}
                   >
-                    Delete
+                    O`chirish
                   </button>
                 </td>
               </tr>
