@@ -3,7 +3,7 @@ import bcrypt from 'bcryptjs';
 const data = {
   users: [
     {
-      name: 'Basir',
+      name: 'Sardor',
       email: 'admin@example.com',
       password: bcrypt.hashSync('1234', 8),
       isAdmin: true,
@@ -69,12 +69,12 @@ const data = {
       description: 'high quality product',
     },
     {
-      name: 'Puma Slim Pant',
+      name: 'Amup Slim Pant',
       category: 'Pants',
       image: '/images/p5.jpg',
       price: 65,
       countInStock: 5,
-      brand: 'Puma',
+      brand: 'Amup',
       rating: 4.5,
       numReviews: 10,
       description: 'high quality product',
