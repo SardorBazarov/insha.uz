@@ -36,12 +36,12 @@ export default function RegisterScreen(props) {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Create Account</h1>
+          <h1>Akkaunt Yaratish</h1>
         </div>
         {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         <div>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Ism</label>
           <input
             type="text"
             id="name"
@@ -51,31 +51,31 @@ export default function RegisterScreen(props) {
           ></input>
         </div>
         <div>
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">Email Nomi</label>
           <input
             type="email"
             id="email"
-            placeholder="Enter email"
+            placeholder="emailni kiting"
             required
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Parol</label>
           <input
             type="password"
             id="password"
-            placeholder="Enter password"
+            placeholder="parolni kiriting"
             required
             onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
         <div>
-          <label htmlFor="confirmPassword">Confirm Password</label>
+          <label htmlFor="confirmPassword">Parolni tasdiqlang</label>
           <input
             type="password"
             id="confirmPassword"
-            placeholder="Enter confirm password"
+            placeholder="tasdiqlash parolini kiriting"
             required
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></input>
@@ -83,14 +83,14 @@ export default function RegisterScreen(props) {
         <div>
           <label />
           <button className="primary" type="submit">
-            Register
+            Ro`yxatdan o`tkazish
           </button>
         </div>
         <div>
           <label />
           <div>
-            Already have an account?{' '}
-            <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
+            Akkaunt avvaldan mavjud?{' '}
+            <Link to={`/signin?redirect=${redirect}`}> Ro`yxatdan o`tish</Link>
           </div>
         </div>
       </form>
