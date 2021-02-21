@@ -89,7 +89,7 @@ export default function ProductEditScreen(props) {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Edit Product {productId}</h1>
+          <h1>Mahsulotni tahrirlash {productId}</h1>
         </div>
         {loadingUpdate && <LoadingBox></LoadingBox>}
         {errorUpdate && <MessageBox variant="danger">{errorUpdate}</MessageBox>}
@@ -100,7 +100,7 @@ export default function ProductEditScreen(props) {
         ) : (
           <>
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">Nomi</label>
               <input
                 id="name"
                 type="text"
@@ -110,27 +110,27 @@ export default function ProductEditScreen(props) {
               ></input>
             </div>
             <div>
-              <label htmlFor="price">Price</label>
+              <label htmlFor="price">Narxi</label>
               <input
                 id="price"
                 type="text"
-                placeholder="Enter price"
+                placeholder="Narxini kititish"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="image">Image</label>
+              <label htmlFor="image">Rasm</label>
               <input
                 id="image"
                 type="text"
-                placeholder="Enter image"
+                placeholder="Rasmni kiritish"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="imageFile">Image File</label>
+              <label htmlFor="imageFile">Rasm faylda</label>
               <input
                 type="file"
                 id="imageFile"
@@ -143,11 +143,11 @@ export default function ProductEditScreen(props) {
               )}
             </div>
             <div>
-              <label htmlFor="category">Category</label>
+              <label htmlFor="category">Toifa</label>
               <input
                 id="category"
                 type="text"
-                placeholder="Enter category"
+                placeholder="Toifani kiritish"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               ></input>
@@ -157,28 +157,28 @@ export default function ProductEditScreen(props) {
               <input
                 id="brand"
                 type="text"
-                placeholder="Enter brand"
+                placeholder="Brandni kiritish"
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="countInStock">Count In Stock</label>
+              <label htmlFor="countInStock">Mavjud</label>
               <input
                 id="countInStock"
                 type="text"
-                placeholder="Enter countInStock"
+                placeholder="Mahsulot miqdori "
                 value={countInStock}
                 onChange={(e) => setCountInStock(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="description">Description</label>
+              <label htmlFor="description">Tavsif</label>
               <textarea
                 id="description"
                 rows="3"
                 type="text"
-                placeholder="Enter description"
+                placeholder="Tavsifini kiritish"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
               ></textarea>
@@ -186,7 +186,7 @@ export default function ProductEditScreen(props) {
             <div>
               <label></label>
               <button className="primary" type="submit">
-                Update
+                Yangilash
               </button>
             </div>
           </>
