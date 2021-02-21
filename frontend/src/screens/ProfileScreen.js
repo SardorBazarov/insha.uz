@@ -43,7 +43,7 @@ export default function ProfileScreen() {
     e.preventDefault();
     // dispatch update profile
     if (password !== confirmPassword) {
-      alert('Password and Confirm Password Are Not Matched');
+      alert('Xos raqam va tasdiqlash xos raqami uyg`un emas');
     } else {
       dispatch(
         updateUserProfile({
@@ -62,7 +62,7 @@ export default function ProfileScreen() {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>User Profile</h1>
+          <h1>Foydalanuvchi sahifasi</h1>
         </div>
         {loading ? (
           <LoadingBox></LoadingBox>
@@ -76,15 +76,15 @@ export default function ProfileScreen() {
             )}
             {successUpdate && (
               <MessageBox variant="success">
-                Profile Updated Successfully
+                Foydalanuvchi profili muvaffaqiyatli amalga oshdi
               </MessageBox>
             )}
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">Ism</label>
               <input
                 id="name"
                 type="text"
-                placeholder="Enter name"
+                placeholder="Ismni kiriting"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></input>
@@ -94,26 +94,26 @@ export default function ProfileScreen() {
               <input
                 id="email"
                 type="email"
-                placeholder="Enter email"
+                placeholder="email ni kiriting"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Xos raqam</label>
               <input
                 id="password"
                 type="password"
-                placeholder="Enter password"
+                placeholder="Xos raqamni kiriting"
                 onChange={(e) => setPassword(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="confirmPassword">confirm Password</label>
+              <label htmlFor="confirmPassword">Takroriy xos raqam</label>
               <input
                 id="confirmPassword"
                 type="password"
-                placeholder="Enter confirm password"
+                placeholder="Xos raqamni takrorlang"
                 onChange={(e) => setConfirmPassword(e.target.value)}
               ></input>
             </div>
@@ -121,31 +121,31 @@ export default function ProfileScreen() {
               <>
                 <h2>Seller</h2>
                 <div>
-                  <label htmlFor="sellerName">Seller Name</label>
+                  <label htmlFor="sellerName">Sotuvchi Nomi</label>
                   <input
                     id="sellerName"
                     type="text"
-                    placeholder="Enter Seller Name"
+                    placeholder="Sotuvchi nomini kiriting"
                     value={sellerName}
                     onChange={(e) => setSellerName(e.target.value)}
                   ></input>
                 </div>
                 <div>
-                  <label htmlFor="sellerLogo">Seller Logo</label>
+                  <label htmlFor="sellerLogo">Sotuvchi Logotipi</label>
                   <input
                     id="sellerLogo"
                     type="text"
-                    placeholder="Enter Seller Logo"
+                    placeholder="Sotuvchi Logotipini kiritung"
                     value={sellerLogo}
                     onChange={(e) => setSellerLogo(e.target.value)}
                   ></input>
                 </div>
                 <div>
-                  <label htmlFor="sellerDescription">Seller Description</label>
+                  <label htmlFor="sellerDescription">Sotuvchi Tavsifi</label>
                   <input
                     id="sellerDescription"
                     type="text"
-                    placeholder="Enter Seller Description"
+                    placeholder="Sotuvchi tavsifini kiriting"
                     value={sellerDescription}
                     onChange={(e) => setSellerDescription(e.target.value)}
                   ></input>
@@ -155,7 +155,7 @@ export default function ProfileScreen() {
             <div>
               <label />
               <button className="primary" type="submit">
-                Update
+                Yangilash
               </button>
             </div>
           </>
