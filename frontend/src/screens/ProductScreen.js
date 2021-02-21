@@ -28,7 +28,7 @@ export default function ProductScreen(props) {
 
   useEffect(() => {
     if (successReviewCreate) {
-      window.alert('Review Submitted Successfully');
+      window.alert('Ko`zdan kechirish muvaffaqiyatli amalga oshdi');
       setRating('');
       setComment('');
       dispatch({ type: PRODUCT_REVIEW_CREATE_RESET });
@@ -45,7 +45,7 @@ export default function ProductScreen(props) {
         createReview(productId, { rating, comment, name: userInfo.name })
       );
     } else {
-      alert('Please enter comment and rating');
+      alert('Iltimos Foydalanuvchi sharhini hamda bahoyingizni qoldiring');
     }
   };
   return (
@@ -56,7 +56,7 @@ export default function ProductScreen(props) {
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
         <div>
-          <Link to="/">Back to result</Link>
+          <Link to="/">Ortga qaytish</Link>
           <div className="row top">
             <div className="col-2">
               <img
@@ -76,9 +76,9 @@ export default function ProductScreen(props) {
                     numReviews={product.numReviews}
                   ></Rating>
                 </li>
-                <li>Pirce : ${product.price}</li>
+                <li>Narxi : ${product.price}</li>
                 <li>
-                  Description:
+                  Tavsif :
                   <p>{product.description}</p>
                 </li>
               </ul>
@@ -87,7 +87,7 @@ export default function ProductScreen(props) {
               <div className="card card-body">
                 <ul>
                   <li>
-                    Seller{' '}
+                    Sotuvchi : {' '}
                     <h2>
                       <Link to={`/seller/${product.seller._id}`}>
                         {product.seller.seller.name}
@@ -100,18 +100,18 @@ export default function ProductScreen(props) {
                   </li>
                   <li>
                     <div className="row">
-                      <div>Price</div>
+                      <div>Narxi</div>
                       <div className="price">${product.price}</div>
                     </div>
                   </li>
                   <li>
                     <div className="row">
-                      <div>Status</div>
+                      <div>Holati </div>
                       <div>
                         {product.countInStock > 0 ? (
-                          <span className="success">In Stock</span>
+                          <span className="success">Bozorda Mavjud</span>
                         ) : (
-                          <span className="danger">Unavailable</span>
+                          <span className="danger">Mavjud Emas</span>
                         )}
                       </div>
                     </div>
@@ -120,7 +120,7 @@ export default function ProductScreen(props) {
                     <>
                       <li>
                         <div className="row">
-                          <div>Qty</div>
+                          <div>Miqdor</div>
                           <div>
                             <select
                               value={qty}
@@ -142,7 +142,7 @@ export default function ProductScreen(props) {
                           onClick={addToCartHandler}
                           className="primary block"
                         >
-                          Add to Cart
+                          Savatga qo`shish
                         </button>
                       </li>
                     </>
@@ -152,9 +152,9 @@ export default function ProductScreen(props) {
             </div>
           </div>
           <div>
-            <h2 id="reviews">Reviews</h2>
+            <h2 id="reviews">Ko`rilgan</h2>
             {product.reviews.length === 0 && (
-              <MessageBox>There is no review</MessageBox>
+              <MessageBox>Hanuz ko`rilmagan</MessageBox>
             )}
             <ul>
               {product.reviews.map((review) => (
@@ -169,25 +169,25 @@ export default function ProductScreen(props) {
                 {userInfo ? (
                   <form className="form" onSubmit={submitHandler}>
                     <div>
-                      <h2>Write a customer review</h2>
+                      <h2>Mijozlar sharhini yozing</h2>
                     </div>
                     <div>
-                      <label htmlFor="rating">Rating</label>
+                      <label htmlFor="rating">Reyting</label>
                       <select
                         id="rating"
                         value={rating}
                         onChange={(e) => setRating(e.target.value)}
                       >
-                        <option value="">Select...</option>
-                        <option value="1">1- Poor</option>
-                        <option value="2">2- Fair</option>
-                        <option value="3">3- Good</option>
-                        <option value="4">4- Very good</option>
-                        <option value="5">5- Excelent</option>
+                        <option value="">Tanlash...</option>
+                        <option value="1">1- Qoniqarsiz</option>
+                        <option value="2">2- Qoniqarli</option>
+                        <option value="3">3- Yaxshi</option>
+                        <option value="4">4- Juda Yaxshi</option>
+                        <option value="5">5- A`lo</option>
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="comment">Comment</label>
+                      <label htmlFor="comment">Sharh kiritish</label>
                       <textarea
                         id="comment"
                         value={comment}
@@ -197,7 +197,7 @@ export default function ProductScreen(props) {
                     <div>
                       <label />
                       <button className="primary" type="submit">
-                        Submit
+                        Yuborish
                       </button>
                     </div>
                     <div>
@@ -211,7 +211,7 @@ export default function ProductScreen(props) {
                   </form>
                 ) : (
                   <MessageBox>
-                    Please <Link to="/signin">Sign In</Link> to write a review
+                    Iltimos sharh qoldirish uchun  <Link to="/signin">Ro`yxatdan o`tish</Link> tugmasini bosing
                   </MessageBox>
                 )}
               </li>
