@@ -13,7 +13,7 @@ export default function OrderHistoryScreen(props) {
   }, [dispatch]);
   return (
     <div>
-      <h1>Order History</h1>
+      <h1>Buyurtmalar tarixi</h1>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -23,11 +23,11 @@ export default function OrderHistoryScreen(props) {
           <thead>
             <tr>
               <th>ID</th>
-              <th>DATE</th>
-              <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
+              <th>SANA</th>
+              <th>UMUMIY</th>
+              <th>TO`LOV AMALGA OSHDI</th>
+              <th>YETKAZIB BERILDI</th>
+              <th>HARAKATLAR</th>
             </tr>
           </thead>
           <tbody>
@@ -36,11 +36,11 @@ export default function OrderHistoryScreen(props) {
                 <td>{order._id}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
                 <td>{order.totalPrice.toFixed(2)}</td>
-                <td>{order.isPaid ? order.paidAt.substring(0, 10) : 'No'}</td>
+                <td>{order.isPaid ? order.paidAt.substring(0, 10) : 'YO`Q'}</td>
                 <td>
                   {order.isDelivered
                     ? order.deliveredAt.substring(0, 10)
-                    : 'No'}
+                    : 'YO`Q'}
                 </td>
                 <td>
                   <button
@@ -50,7 +50,7 @@ export default function OrderHistoryScreen(props) {
                       props.history.push(`/order/${order._id}`);
                     }}
                   >
-                    Details
+                    Tafsilotlar
                   </button>
                 </td>
               </tr>
