@@ -60,7 +60,7 @@ export default function ProductListScreen(props) {
   ]);
 
   const deleteHandler = (product) => {
-    if (window.confirm('Are you sure to delete?')) {
+    if (window.confirm('Rostdan ham o`chirib yuborishni istaysizmi?')) {
       dispatch(deleteProduct(product._id));
     }
   };
@@ -72,7 +72,7 @@ export default function ProductListScreen(props) {
       <div className="row">
         <h1>Products</h1>
         <button type="button" className="primary" onClick={createHandler}>
-          Create Product
+          Yangi mahsulot
         </button>
       </div>
 
@@ -91,11 +91,11 @@ export default function ProductListScreen(props) {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>NAME</th>
-                <th>PRICE</th>
-                <th>CATEGORY</th>
+                <th>NOMI</th>
+                <th>NARXI</th>
+                <th>TOIFA</th>
                 <th>BRAND</th>
-                <th>ACTIONS</th>
+                <th>HARAKATLAR</th>
               </tr>
             </thead>
             <tbody>
@@ -114,14 +114,14 @@ export default function ProductListScreen(props) {
                         props.history.push(`/product/${product._id}/edit`)
                       }
                     >
-                      Edit
+                      Tahrirlash
                     </button>
                     <button
                       type="button"
                       className="small"
                       onClick={() => deleteHandler(product)}
                     >
-                      Delete
+                      O`chirish
                     </button>
                   </td>
                 </tr>
