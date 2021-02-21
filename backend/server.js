@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona', {
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/inshaallah', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
@@ -33,10 +33,10 @@ app.use('/uploads', express.static(path.join(__dirname, '/uploads')));
 app.use(express.static(path.join(__dirname, '/frontend/build')));
 app.get('*', (req, res) =>
   res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
-);
-// app.get('/', (req, res) => {
-//   res.send('Server is ready');
-// });
+); 
+//app.get('/', (req, res) => {
+  //res.send('Server is ready');
+//});
 
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
