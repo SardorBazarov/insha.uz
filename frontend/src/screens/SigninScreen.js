@@ -30,26 +30,26 @@ export default function SigninScreen(props) {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Sign In</h1>
+          <h1>Ro`yxatdan O`tish</h1>
         </div>
         {loading && <LoadingBox></LoadingBox>}
         {error && <MessageBox variant="danger">{error}</MessageBox>}
         <div>
-          <label htmlFor="email">Email address</label>
+          <label htmlFor="email">Email hisob manzili</label>
           <input
             type="email"
             id="email"
-            placeholder="Enter email"
+            placeholder="email hisobingizni kiriting"
             required
             onChange={(e) => setEmail(e.target.value)}
           ></input>
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Xos Raqam</label>
           <input
             type="password"
             id="password"
-            placeholder="Enter password"
+            placeholder="Xos raqamni kiriting"
             required
             onChange={(e) => setPassword(e.target.value)}
           ></input>
@@ -57,16 +57,17 @@ export default function SigninScreen(props) {
         <div>
           <label />
           <button className="primary" type="submit">
-            Sign In
+            Ro`yxatdan o`tish
           </button>
         </div>
         <div>
           <label />
           <div>
-            New customer?{' '}
+            Yangi foydalanuvchimisiz ? {' '}
             <Link to={`/register?redirect=${redirect}`}>
-              Create your account
+              Yangi akkaunt yaratish
             </Link>
+            ni bosing !
           </div>
         </div>
       </form>
