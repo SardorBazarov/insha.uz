@@ -49,7 +49,7 @@ export default function UserEditScreen(props) {
     <div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Edit User {name}</h1>
+          <h1>Foydalanuvchini tahrirlash {name}</h1>
           {loadingUpdate && <LoadingBox></LoadingBox>}
           {errorUpdate && (
             <MessageBox variant="danger">{errorUpdate}</MessageBox>
@@ -62,11 +62,11 @@ export default function UserEditScreen(props) {
         ) : (
           <>
             <div>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">Ism</label>
               <input
                 id="name"
                 type="text"
-                placeholder="Enter name"
+                placeholder="Ismini kiritig"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></input>
@@ -76,13 +76,13 @@ export default function UserEditScreen(props) {
               <input
                 id="email"
                 type="email"
-                placeholder="Enter email"
+                placeholder="@mail hisobini kiriting"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
             </div>
             <div>
-              <label htmlFor="isSeller">Is Seller</label>
+              <label htmlFor="isSeller">Sotuvchimi ?</label>
               <input
                 id="isSeller"
                 type="checkbox"
@@ -91,7 +91,7 @@ export default function UserEditScreen(props) {
               ></input>
             </div>
             <div>
-              <label htmlFor="isAdmin">Is Admin</label>
+              <label htmlFor="isAdmin"> Adminmi ?</label>
               <input
                 id="isAdmin"
                 type="checkbox"
@@ -101,7 +101,7 @@ export default function UserEditScreen(props) {
             </div>
             <div>
               <button type="submit" className="primary">
-                Update
+                Tahrirlash
               </button>
             </div>
           </>
